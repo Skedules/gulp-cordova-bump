@@ -29,7 +29,7 @@ const $ = require('gulp-load-plugins')();
 function Bump() {
    let self = {
       appendArgs: function (config) {
-         let result = _.pick(args, ['minor', 'major', 'patch', 'prerelease', 'setversion']);
+         let result = _.pick(args, ['minor', 'major', 'patch', 'prerelease', 'setversion', 'prepatch']);
 
          result['packageJson'] = args['packagejson'];
          result['bowerJson'] = args['bowerjson'];
@@ -49,6 +49,8 @@ function Bump() {
             result.bumpType = 'patch';
          } else if (result.prerelease) {
             result.bumpType = 'prerelease';
+         } else if (result.prepatch) {
+            result.bumpType = 'prepatch';
          }
 
          return result;
