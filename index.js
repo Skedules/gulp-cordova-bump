@@ -63,7 +63,7 @@ function Bump() {
          let jsonFilter = $.filter('**/*.json', {restore: true});
          let packageJsonFilter = $.filter('**/package*.json', {restore: true});
          let bowerJsonFilter = $.filter('**/bower*.json', {restore: true});
-         let xmlFilter = $.filter('**/*.xml', {restore: true});
+         let xmlFilter = $.filter('**/*.xml.tmpl', {restore: true});
 
          let src = [];
          if (this.packageJson) {
